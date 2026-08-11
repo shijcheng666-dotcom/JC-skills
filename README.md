@@ -11,6 +11,7 @@ JC-skills keeps each skill self-contained in its own directory, so you can brows
 | [严谨模式 / Rigor Mode](skills/rigor-mode/) | A structured workflow for reliable, verifiable, and revisable AI outputs. | Any AI assistant | [SKILL.md](skills/rigor-mode/SKILL.md) | Author-authorized; no formal license file in source |
 | [桌面救星 / Desktop Savior](skills/desktop-savior/) | A cautious, reversible organizer for mixed personal and work files. | Personal/work folders | [SKILL.md](skills/desktop-savior/SKILL.md) | MIT declared in source README |
 | [Windows 轻净计划 / Windows PC Care](skills/windows-pc-care/) | A safety-first workflow for diagnosing and improving Windows 10/11 PCs. | Windows 10/11 | [SKILL.md](skills/windows-pc-care/SKILL.md) | MIT declared in source README |
+| [本地 Agent 记忆管家 / Local Agent Memory Governor](skills/local-agent-memory-governor/) | A generic audit, backup, and rollback workflow for local agent memory stores. | Any local AI agent | [SKILL.md](skills/local-agent-memory-governor/SKILL.md) | Author-authored; no formal license file in source |
 
 See [SKILLS.md](SKILLS.md) for direct page and raw-file links.
 
@@ -21,6 +22,7 @@ Share the directory when the recipient needs the complete skill package:
 - [Rigor Mode](skills/rigor-mode/)
 - [Desktop Savior](skills/desktop-savior/)
 - [Windows PC Care](skills/windows-pc-care/)
+- [Local Agent Memory Governor](skills/local-agent-memory-governor/)
 
 Share the `SKILL.md` page when only the main instruction file is needed. Raw links are also listed in [SKILLS.md](SKILLS.md).
 
@@ -35,7 +37,8 @@ JC-skills/
 └─ skills/
    ├─ rigor-mode/
    ├─ desktop-savior/
-   └─ windows-pc-care/
+   ├─ windows-pc-care/
+   └─ local-agent-memory-governor/
 ```
 
 Each skill directory is independent. References and scripts stay inside the skill that uses them. New skills should be added as a new `skills/<skill-slug>` directory.
