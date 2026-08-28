@@ -4,8 +4,8 @@ Use this page to find and share an individual skill from [JC-skills](https://git
 
 | Slug | Name | Directory | Main file | Raw `SKILL.md` |
 |---|---|---|---|---|
-| `rigor-mode` | 严谨模式 / Rigor Mode | [Browse](skills/rigor-mode/) | [Open](skills/rigor-mode/SKILL.md) | [Raw](https://raw.githubusercontent.com/shijcheng666-dotcom/JC-skills/main/skills/rigor-mode/SKILL.md) |
-| `desktop-savior` | 桌面救星 / Desktop Savior | [Browse](skills/desktop-savior/) | [Open](skills/desktop-savior/SKILL.md) | [Raw](https://raw.githubusercontent.com/shijcheng666-dotcom/JC-skills/main/skills/desktop-savior/SKILL.md) |
+| `rigor-mode` | 严谨模式 2.0 / Rigor Mode 2.0 | [Browse](skills/rigor-mode/) | [Open](skills/rigor-mode/SKILL.md) | [Raw](https://raw.githubusercontent.com/shijcheng666-dotcom/JC-skills/main/skills/rigor-mode/SKILL.md) |
+| `skill-effectiveness-evaluator` | 技能测试台 / Skill Effectiveness Evaluator | [Browse](skills/skill-effectiveness-evaluator/) | [Open](skills/skill-effectiveness-evaluator/SKILL.md) | [Raw](https://raw.githubusercontent.com/shijcheng666-dotcom/JC-skills/main/skills/skill-effectiveness-evaluator/SKILL.md) |`r`n| `desktop-savior` | 桌面救星 / Desktop Savior | [Browse](skills/desktop-savior/) | [Open](skills/desktop-savior/SKILL.md) | [Raw](https://raw.githubusercontent.com/shijcheng666-dotcom/JC-skills/main/skills/desktop-savior/SKILL.md) |
 | `windows-pc-care` | Windows 轻净计划 / Windows PC Care | [Browse](skills/windows-pc-care/) | [Open](skills/windows-pc-care/SKILL.md) | [Raw](https://raw.githubusercontent.com/shijcheng666-dot-com/JC-skills/main/skills/windows-pc-care/SKILL.md) |
 | `local-agent-memory-governor` | 本地 Agent 记忆管家 / Local Agent Memory Governor | [Browse](skills/local-agent-memory-governor/) | [Open](skills/local-agent-memory-governor/SKILL.md) | [Raw](https://raw.githubusercontent.com/shijcheng666-dotcom/JC-skills/main/skills/local-agent-memory-governor/SKILL.md) |
 | `sandbox-isolation` | 探索隔离区 / Sandbox Isolation | [Browse](skills/sandbox-isolation/) | [Open](skills/sandbox-isolation/SKILL.md) | [Raw](https://raw.githubusercontent.com/shijcheng666-dotcom/JC-skills/main/skills/sandbox-isolation/SKILL.md) |
