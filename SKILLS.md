@@ -29,7 +29,7 @@ Rigor Mode's `SKILL.md` frontmatter name is `rigor-mode-v2`. The directory keeps
 | `skills/skill-effectiveness-evaluator/` | 0903V2 | Standalone use |
 | `suites/skillfactory/skill-effectiveness-evaluator/` | 0903V3 | Pinned member of skillfactory, adds the orchestrator dispatch interface |
 
-They are intentionally not merged. Use the suite copy inside skillfactory and the standalone copy elsewhere. Whether to promote V3 to the standalone directory is a maintainer decision.
+They are intentionally maintained independently. 0903V3 is a small adaptation for orchestrator calls inside the suite; 0903V2 remains the standalone version. This is deliberate, not a pending upgrade.
 
 ## Direct sharing links
 
