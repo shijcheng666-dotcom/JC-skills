@@ -2,6 +2,15 @@
 
 Newest first. Each entry records what changed, why, and how it was verified.
 
+## 2026-11-05
+
+### 升级：user-interview-transcript-calibrator 2.5.2 → 2.6.0
+- **来源**：用户提供的 `user-interview-transcript-calibrator_v2.6.0.zip`（文件时间 2026-11-05，包内仅 `SKILL.md` 一个文件，`Skill 版本：v2.6.0`）。
+- **变更**：`SKILL.md` 整体替换为 2.6.0；`README.md` 按 2.6.0 重写，补充 2.6.0 主要变化、三份默认产物与交付门禁说明。
+- **2.6.0 要点**：新增定位锚点（时间戳或 `[段N]`）；新增身份置信度与显示形式降级顺序；参与者观察改为五维度逐项结项（已提炼／有依据缺省）；新增交付校验与门禁表 V01–V13 及 V07 计数断言；明确正式笔录与内部复盘的内容边界。
+- **验证**：上传后从仓库取回 `SKILL.md` 与本地包逐字节比对一致（SHA-256 `4B70C8DA52093A5F0A5346B4E5376063BB8F516C38B4FA541456C1C8EC2482EA`）。
+- **索引**：根 `README.md`、`SKILLS.md` 版本号同步为 2.6.0。
+- **依赖旧版行为的使用者需注意**：观察维度由原表格口径改为五维度逐项结项，且未通过门禁断言时不得标记为正式笔录。
 ## 2026-11-02
 
 ### 维护决策确认
