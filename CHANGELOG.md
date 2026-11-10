@@ -2,6 +2,17 @@
 
 Newest first. Each entry records what changed, why, and how it was verified.
 
+## 2026-11-10
+
+### 新增：graphic-report 原创 Skill
+- **来源**：作者原创项目，快照复制自本地开发仓库 `graphic-report/`；纳入其 Git 已跟踪的 48 个源文件，并新增项目说明，不导入原仓库提交历史。
+- **内容**：图解报告 Skill、中文主题与图形语汇、visual-explainer 渲染内核、构建/截图脚本、通用展示页，以及用户明确确认公开的第六场访谈案例。
+- **排除**：上层工作区的访谈转录稿、试验目录、`.aime` 记忆和其他工作区材料；`engine/node_modules` 依忽略规则未纳入。
+- **许可**：Skill 本身没有正式开源许可证；不把第三方引擎的 MIT 许可误作整套 Skill 的授权。单独登记 visual-explainer（MIT）、PELE（MIT）及 Lucide 图标（ISC），保留上游许可文本。
+- **研究案例**：案例是访谈内容整理页而非原始逐字稿；按作者明确要求随公开仓库收录。收录不等于授权对研究内容进行其他用途的再利用。
+- **提交历史**：以快照加入，不导入原开发仓库的提交历史及其提交者元数据。
+- **验证**：源仓库 48 个已跟踪文件与快照逐一 Git blob SHA-1 一致；扫描未发现凭据、本机绝对路径或转录稿副本；文档相对链接检查无断链。推送后再核验远端文件。
+
 ## 2026-11-05
 
 ### 升级：user-interview-transcript-calibrator 2.5.2 → 2.6.0

@@ -15,6 +15,7 @@ Each skill lives in its own directory, so you can browse, copy, install, and sha
 | [Windows 轻净计划 / Windows PC Care](skills/windows-pc-care/) | - | A safety-first workflow for diagnosing and improving Windows 10/11 PCs. | [SKILL.md](skills/windows-pc-care/SKILL.md) | MIT declared in source README |
 | [本地 Agent 记忆管家 / Local Agent Memory Governor](skills/local-agent-memory-governor/) | - | Audit, backup, and rollback workflow for local agent memory stores. | [SKILL.md](skills/local-agent-memory-governor/SKILL.md) | Author-authored; no formal license |
 | [探索隔离区 / Sandbox Isolation](skills/sandbox-isolation/) | - | Diagnose and govern memory stores in workspaces used for unrelated exploration. | [SKILL.md](skills/sandbox-isolation/SKILL.md) | Author-authored; no formal license |
+| [图解报告 / Graphic Report](skills/graphic-report/) | - | Turn source material into visual HTML reports or self-contained graphic fragments for existing pages. | [SKILL.md](skills/graphic-report/SKILL.md) | Author-authored; no formal license |
 
 ## Suites
 
@@ -48,7 +49,8 @@ JC-skills/
 │  ├─ desktop-savior/
 │  ├─ windows-pc-care/
 │  ├─ local-agent-memory-governor/
-│  └─ sandbox-isolation/
+│  ├─ sandbox-isolation/
+│  └─ graphic-report/
 └─ suites/
    └─ skillfactory/
 ```

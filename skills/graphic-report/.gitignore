@@ -1,0 +1,5 @@
+# 运行依赖与视觉检查产物不纳入版本库
+engine/node_modules/
+**/*-shots/
+**/*.sheet.png
+**/*.sheet-*.png
