@@ -2,6 +2,17 @@
 
 Newest first. Each entry records what changed, why, and how it was verified.
 
+## 2026-11-11
+
+### 更新：graphic-report 视觉流程与构图指南
+- **来源**：作者本地 `graphic-report` Git 仓库当前 `master` 最新提交 `02a7188`（截至本次同步）。Skill 本身无版本字段，索引仍记 `-`。
+- **变更**：同步 52 个 Git 已跟踪源文件到 `skills/graphic-report/`（上次快照 49 个文件）。新增基础中文主题、构图/好图指南、桌面专用视觉检查脚本和基础 HTML 模板；更新 Skill 工作流、截图脚本、主题、语汇与两个示例。
+- **行为影响**：独立报告改为基础主题 + 按需 recap 层；默认视觉检查只验收桌面 1280px，不再检查 390px 手机视口；首轮查看多页联系表，后续按改动范围复查，增加 `--figure`/`--selector` 局部截图；将每图 `<figure>`、场景/几何推导和换词测试写入流程。
+- **依赖变化**：Playwright Core 不随 Git 快照分发，需本地另行安装；Node.js 20+、Chrome/Edge 为检查环境依赖。
+- **许可证**：`scripts/desktop-look.mjs` 基于 MIT 许可的 visual-explainer `engine/kit/look.mjs` 改编；第三方上游 `engine/` 未修改。已在 `NOTICE.md` 与 `LICENSES/graphic-report.md` 登记，保留 `engine/LICENSE`。
+- **隐私/历史**：仅复制本地子仓库已跟踪文件，不导入本地提交历史、邮箱、上层工作区转录稿、试验文件或记忆；用户此前已明确接受第六场案例随 Skill 公开。
+- **验证**：52 个本地 Git 跟踪源文件与快照逐文件 Git blob 比对一致（另有 README/NOTICE/许可证维护说明）；20 个 JS/MJS 文件通过 `node --check`；新桌面检查器在 1280px 上检查 `vocab-showcase.html` 无错误；两个示例均重新构建并报告桌面视觉检查无问题；敏感模式扫描未发现凭据、邮箱或绝对用户路径。联系表文件已生成，未逐张作人工外观验收；推送后的远端树待核验。
+
 ## 2026-11-10
 
 ### 新增：graphic-report 原创 Skill

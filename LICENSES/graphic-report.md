@@ -11,10 +11,10 @@
 
 | 路径 | 组件 / 版权方 | 许可证 | 说明 |
 |---|---|---|---|
-| `engine/` | visual-explainer / Copyright (c) 2025 Nico Bailon | MIT | 上游许可文本原样保留在 [`engine/LICENSE`](../skills/graphic-report/engine/LICENSE)。 |
+| `engine/` 与改编的 `scripts/desktop-look.mjs` | visual-explainer / Copyright (c) 2025 Nico Bailon | MIT | 渲染内核在 `engine/`；桌面视觉检查器基于上游 `engine/kit/look.mjs` 改编，保留上游引擎原文件不变。许可文本见 [`engine/LICENSE`](../skills/graphic-report/engine/LICENSE)。 |
 | `engine/kit/vendor/pele.mjs` | PELE / Copyright (c) 2026 kepano | MIT | 许可文本位于 [`PELE-LICENSE`](../skills/graphic-report/engine/kit/vendor/PELE-LICENSE)。 |
 | `engine/kit/vendor/pele.mjs` 中 reset 图标 | Lucide Icons and Contributors | ISC | 许可文本同样列在 `PELE-LICENSE`。 |
-| `engine/node_modules/playwright-core` | Microsoft Playwright contributors | Apache-2.0 | `node_modules` 已被 `.gitignore` 排除，不纳入公开 Skill 快照；安装时按工程依赖另行获取。 |
+| Playwright Core（运行时依赖，不在仓库快照） | Microsoft Playwright contributors | Apache-2.0 | `node_modules` 已被 `.gitignore` 排除，不纳入公开快照；在运行环境单独安装，依赖包自带许可证文本。 |
 
 本说明只涵盖列出的第三方组件，不改变其各自许可。使用者需遵循对应许可文件中的版权声明、许可和再分发条件。
 

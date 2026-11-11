@@ -34,26 +34,22 @@ if (!args.includes("--no-check")) {
     console.log("  ⚠ 未安装 playwright-core，已跳过视觉检查。安装：npm install --no-save --prefix \"" + join(engine) + "\" playwright-core");
   } else {
     const check = `
-      import { lookAt, lookLines } from ${JSON.stringify("file:///" + join(engine, "kit", "look.mjs").replaceAll("\\", "/"))};
+      import { lookAt, lookLines } from ${JSON.stringify("file:///" + join(here, "desktop-look.mjs").replaceAll("\\", "/"))};
       const looked = await lookAt(${JSON.stringify(out)});
       for (const line of lookLines(looked)) console.log("  " + line);
       process.exitCode = looked.problems.length ? 1 : 0;
     `;
-    // 本技能面向电脑端阅读：390px 窄屏下"图内标签小于 12px"降级为提示，不阻塞；桌面端问题（遮挡、重叠、截断、横向滚动等）仍然拦截。
+    // 默认只做 1280px 桌面检查；移动端不属于本技能的交付验收范围。
     r = spawnSync(process.execPath, ["--input-type=module", "-e", check], { encoding: "utf8", cwd: engine });
     const lines = (r.stdout || "").split(/\r?\n/);
-    const isPhoneSmall = (l) => /a diagram label renders at [\d.]+px at 390px/.test(l);
-    const kept = lines.filter((l) => !isPhoneSmall(l));
-    const phoneOnly = lines.some(isPhoneSmall);
-    const blocking = kept.some((l) => /^\s*✗/.test(l));
-    for (const l of kept) if (l.trim()) console.log(l);
+    const blocking = lines.some((l) => /^\s*✗/.test(l));
+    for (const l of lines) if (l.trim()) console.log(l);
     if (r.stderr) console.error(r.stderr);
-    if (phoneOnly) console.log("  ℹ 手机窄屏(390px)下有图内小字号提示，已忽略（本技能以电脑端阅读为主）。");
     if (blocking) {
       console.log("✗ 视觉检查发现问题；页面已写出，请按提示修正后重新运行。");
       process.exitCode = 1;
     }
-    else if (!kept.some((l) => /Visual check/.test(l))) console.log("  ✓ 桌面端视觉检查通过");
+    else if (!lines.some((l) => /Visual check/.test(l))) console.log("  ✓ 桌面端视觉检查通过");
   }
 }
 console.log("✓ 输出：" + out);

@@ -11,21 +11,22 @@
 ```text
 graphic-report/
 ├── SKILL.md
-├── assets/       # 中文主题与图形语汇样式
+├── assets/       # 基础主题、复盘主题与图形语汇样式
 ├── engine/       # visual-explainer 渲染内核（保留上游许可）
 ├── examples/     # 通用展示页与第六场案例
-├── references/  # 图形语汇与选型说明
-└── scripts/      # 构建、适配、截图与曲线工具
+├── references/   # 视觉推导与图形语汇说明
+├── scripts/      # 构建、桌面检查、截图与曲线工具
+└── templates/    # HTML 起始模板
 ```
 
 ## 基本使用
 
 1. 阅读 `SKILL.md`，按材料和交付模式选择独立报告或嵌入模式。
 2. 使用 `.src.html` 编写源页面；独立报告通过 `node scripts/build.mjs <name>.src.html` 构建。
-3. 如需整页截图，运行 `node scripts/shoot.mjs <page.html> <output-dir> 1400`。
-4. 构建成功后仍需检查整页视觉效果，并核对内容忠实度。
+3. 默认验收桌面 1280px 视口。首次查看 `.sheet.png` / `.sheet-2.png` 联系表；局部重查可用 `node scripts/shoot.mjs <page.html> <output-dir> 1400 --figure=N`，或 `--selector="CSS选择器"`（须唯一命中）。
+4. 构建成功后仍需检查图形主次、内容关系和事实忠实度；视觉检查的 `⚠` 是复查线索，`✗` 才是阻塞项。
 
-运行需要 Node.js 20+。渲染和截图会调用随包 `engine/`，截图还依赖 Playwright 与本机 Chrome 或 Edge。
+运行需要 Node.js 20+ 和本机 Chrome 或 Edge。渲染使用随包 `engine/`；浏览器视觉检查依赖 Playwright Core，但 `node_modules` 不纳入仓库，需在本地安装：`npm install --no-save --prefix engine playwright-core`。未安装时仍可构建，但浏览器检查会跳过并提示。独立报告可从 `templates/base.src.html` 起步；视觉构思方法见 `references/design.md`。
 
 ## 示例说明
 
@@ -34,8 +35,8 @@ graphic-report/
 
 ## 来源与许可
 
-本 Skill 的规则、主题、图形语汇与工具由作者原创；当前没有为 Skill 整体声明正式开源许可证。**公开收录不等于授予他人修改或再分发 Skill 本身的许可**。许可状态见 [`LICENSES/graphic-report.md`](../../LICENSES/graphic-report.md)。
+本 Skill 的规则、主题、图形语汇与原创工具由作者完成；当前没有为 Skill 整体声明正式开源许可证。**公开收录不等于授予他人修改或再分发 Skill 本身的许可**。许可状态见 [`LICENSES/graphic-report.md`](../../LICENSES/graphic-report.md)。
 
-渲染内核来自 visual-explainer，采用 MIT 许可，原许可文本保留在 `engine/LICENSE`。`engine/kit/vendor/pele.mjs` 及其依赖的图标许可说明保留在 `engine/kit/vendor/PELE-LICENSE`。不得将这些第三方组件的许可证误读为整个 Skill 的许可证。
+`engine/` 渲染内核和 `scripts/desktop-look.mjs` 桌面检查器包含 visual-explainer 上游代码；检查器为本地改编版本，MIT 许可原文保留在 `engine/LICENSE`。`engine/kit/vendor/pele.mjs` 及其依赖图标许可说明保留在 `engine/kit/vendor/PELE-LICENSE`。不得将第三方组件许可证误读为整个 Skill 的许可证。
 
-该 Skill 依赖的项目文件均保留在目录中；更新或分发时请一并保留对应第三方许可与来源说明。
+Playwright Core 不随仓库快照分发，运行视觉检查前需本地安装，Apache-2.0 许可随该依赖包提供。更新或再分发时请保留目录内的上游来源和许可说明。

@@ -1,5 +1,6 @@
 # 运行依赖与视觉检查产物不纳入版本库
 engine/node_modules/
+backups/
 **/*-shots/
 **/*.sheet.png
 **/*.sheet-*.png
