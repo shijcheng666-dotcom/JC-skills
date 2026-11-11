@@ -24,6 +24,9 @@
 .mod > h2 { margin:0 0 .55rem; font-size:1.08rem; }
 .mod > p { font-size:.9rem; color:var(--text-dim); max-width:68ch; margin:0 0 .6rem; }
 .mod > p:last-child { margin-bottom:0; }
+/* 页面阅读栏不约束卡片内部；保留段落原有的 68ch 行宽与其余元素通栏。 */
+.mod > h2,.mod > p,.mod > .insight,.mod > .note { width:auto; margin-inline:0; }
+.mod > h2,.mod > .insight,.mod > .note { max-width:none; }
 .mod strong,.mod b { color:var(--text); font-weight:600; }
 .mod .hl { color:var(--accent); font-weight:600; }
 .mod.hero { border-top:3px solid var(--accent); }

@@ -9,6 +9,8 @@
   --surface-2: color-mix(in srgb, var(--surface) 72%, var(--bg));
   --lift: transparent;
   --halo: 0%;
+  /* 阅读栏宽（rem 计，保证标题与正文同栏宽）；展示栏（图、表、卡片）不受此限，保持通栏 */
+  --measure: 40rem;
 }
 :root[data-register="paper"],:root[data-register="editorial"] {
   --font-display:"Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "SimSun", serif;
@@ -42,13 +44,17 @@ h1,h2,.kpi .val { text-box:none; }
 .eyebrow { display:inline-flex; font:700 .75rem var(--font-body); letter-spacing:.14em; color:var(--accent); }
 h1 { max-width:24em; letter-spacing:-.025em; line-height:1.22; font-size:clamp(2rem,4.6vw,3.3rem); margin:.2rem 0 .6rem; }
 h2 { letter-spacing:-.015em; line-height:1.35; font-size:1.5rem; }
-.lead,.intro { font-size:1.05rem; color:var(--text-dim); max-width:65ch; line-height:1.8; margin:0; }
+.lead,.intro { font-size:1.05rem; color:var(--text-dim); max-width:var(--measure); line-height:1.8; margin:0; }
 .lead b { color:var(--text); }
 .meta { display:flex; flex-wrap:wrap; gap:.5rem; font-family:var(--font-body); }
 .chip { display:inline-flex; align-items:center; gap:.4em; padding:.2rem .75rem; border:1px solid var(--border); border-radius:var(--r-1); font:400 .78rem var(--font-body); color:var(--text-dim); background:var(--surface); }
 .chip::before { display:none; }
 .chip .k { color:var(--accent); font-weight:700; font-size:.7rem; letter-spacing:.06em; }
-:where(main,section:not(.sources)) > :where(p,ul,ol) { max-width:68ch; }
+/* 阅读栏在画布内居中，展示栏（图、表、卡片）通栏：避免宽画布里正文贴左、右侧留下大片无用途空白。
+   width:100% 保证短标题、短段落也与长文共享同一左边缘，不随文字长度收缩。 */
+:where(main,section:not(.sources)) > :where(p,ul,ol) { width:100%; max-width:var(--measure); margin-inline:auto; }
+header > .eyebrow, header > h1, header > .intro, header > .lead, header > .meta, header > .ev-legend,
+section > h2, section > .insight, section > .note { width:100%; max-width:var(--measure); margin-inline:auto; }
 figure { margin:.8rem 0 0; }
 .frame,figure.fig { background:var(--stage),var(--surface-2); border:1px solid var(--border); border-radius:var(--r-2); padding:1rem; overflow-x:auto; }
 figcaption { font-size:.85rem; color:var(--text-dim); margin-top:.7rem; line-height:1.65; max-width:68ch; }

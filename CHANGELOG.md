@@ -2,6 +2,16 @@
 
 Newest first. Each entry records what changed, why, and how it was verified.
 
+## 2026-11-12
+
+### 升级：graphic-report 1.0.0 → 1.0.1
+- **来源**：本地开发仓库正式标签 `v1.0.1`，发布提交 `6a5509d34f226d4b0fbcddfe57ab2025c9f14a74`；标签树与后续记录发布哈希的 HEAD 树一致。同步依据为 53 个 Git 已跟踪文件。
+- **变更**：阅读列改为 40rem 居中，标题、正文与判断条共用阅读列；图、表与卡片保持通栏；修复 recap 模块内部布局受全局居中规则影响的问题。Skill frontmatter、Skill README、仓库 README、SKILLS 索引均同步标为 1.0.1。
+- **版本行为**：1.0.1 为 PATCH 布局修复；本次未重跑源记录中的 1280/1440 全路径验收，不将既有版本日志中的测试声明描述为本次新执行。
+- **范围与隐私**：只复制 `graphic-report` 仓库 53 个已跟踪文件，不导入原仓库提交历史/邮箱、备份目录或父级工作区资料；此前已确认公开的第六场案例保持不变。
+- **许可**：保留 Skill 未声明正式开源许可证的状态与现有第三方许可说明。
+- **验证**：53 个 tagged 源文件与快照逐 Git blob SHA-1 比对一致（0 差异）；敏感模式扫描无命中；仓库内相对链接无断链；索引版本各恰好一行。推送后的远端 Git tree 与 Raw 链接待核验。
+
 ## 2026-11-11
 
 ### 更新：graphic-report 视觉流程与构图指南
@@ -12,6 +22,15 @@ Newest first. Each entry records what changed, why, and how it was verified.
 - **许可证**：`scripts/desktop-look.mjs` 基于 MIT 许可的 visual-explainer `engine/kit/look.mjs` 改编；第三方上游 `engine/` 未修改。已在 `NOTICE.md` 与 `LICENSES/graphic-report.md` 登记，保留 `engine/LICENSE`。
 - **隐私/历史**：仅复制本地子仓库已跟踪文件，不导入本地提交历史、邮箱、上层工作区转录稿、试验文件或记忆；用户此前已明确接受第六场案例随 Skill 公开。
 - **验证**：52 个本地 Git 跟踪源文件与快照逐文件 Git blob 比对一致（另有 README/NOTICE/许可证维护说明）；20 个 JS/MJS 文件通过 `node --check`；新桌面检查器在 1280px 上检查 `vocab-showcase.html` 无错误；两个示例均重新构建并报告桌面视觉检查无问题；敏感模式扫描未发现凭据、邮箱或绝对用户路径。联系表文件已生成，未逐张作人工外观验收；推送后的远端树待核验。
+
+## 2026-11-11
+
+### 升级：graphic-report 1.0.0 → 1.0.1
+- **来源**：本地开发仓库正式 Git 标签 `v1.0.1`，发布提交 `6a5509d34f226d4b0fbcddfe57ab2025c9f14a74`；其后仅有记录该提交哈希的文档提交 `9cd6797`。同步依据为 tagged 1.0.1 的 53 个已跟踪文件。
+- **变更**：阅读列改为 40rem 居中，标题、正文与判断条共用阅读列；图、表及卡片保持通栏；修复 recap 模块内部布局被全局居中规则影响的问题。更新 `SKILL.md` version 到 1.0.1；同步 Skill README、仓库 README 和 SKILLS 索引版本。
+- **版本行为**：1.0.1 属 PATCH 修复。保留本地 CHANGELOG 中既有验证声明，不额外扩展声称此次重复了 1280/1440 所有路径测试。
+- **许可证与范围**：仅同步 `graphic-report` 子仓库已跟踪文件，不导入本地 Git 历史、备份目录或父级工作区材料；保持 Skill 本身未声明开源许可证和第三方许可证记录。
+- **验证**：待完成 tagged 文件逐 blob 校验、敏感信息/链接检查和远端树核验。
 
 ## 2026-11-10
 

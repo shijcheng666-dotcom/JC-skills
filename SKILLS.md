@@ -13,7 +13,7 @@ Find and share an individual skill or suite from [JC-skills](https://github.com/
 | `windows-pc-care` | Windows 轻净计划 / Windows PC Care | - | [Browse](skills/windows-pc-care/) | [Open](skills/windows-pc-care/SKILL.md) | [Raw](https://raw.githubusercontent.com/shijcheng666-dotcom/JC-skills/main/skills/windows-pc-care/SKILL.md) |
 | `local-agent-memory-governor` | 本地 Agent 记忆管家 / Local Agent Memory Governor | - | [Browse](skills/local-agent-memory-governor/) | [Open](skills/local-agent-memory-governor/SKILL.md) | [Raw](https://raw.githubusercontent.com/shijcheng666-dotcom/JC-skills/main/skills/local-agent-memory-governor/SKILL.md) |
 | `sandbox-isolation` | 探索隔离区 / Sandbox Isolation | - | [Browse](skills/sandbox-isolation/) | [Open](skills/sandbox-isolation/SKILL.md) | [Raw](https://raw.githubusercontent.com/shijcheng666-dotcom/JC-skills/main/skills/sandbox-isolation/SKILL.md) |
-| `graphic-report` | 图解报告 / Graphic Report | - | [Browse](skills/graphic-report/) | [Open](skills/graphic-report/SKILL.md) | [Raw](https://raw.githubusercontent.com/shijcheng666-dotcom/JC-skills/main/skills/graphic-report/SKILL.md) |
+| `graphic-report` | 图解报告 / Graphic Report | 1.0.1 | [Browse](skills/graphic-report/) | [Open](skills/graphic-report/SKILL.md) | [Raw](https://raw.githubusercontent.com/shijcheng666-dotcom/JC-skills/main/skills/graphic-report/SKILL.md) |
 
 Rigor Mode's `SKILL.md` frontmatter name is `rigor-mode-v2`. The directory keeps the older name `rigor-mode` so existing links keep working.
 
