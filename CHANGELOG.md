@@ -4,13 +4,13 @@ Newest first. Each entry records what changed, why, and how it was verified.
 
 ## 2026-11-12
 
-### 升级：graphic-report 1.0.0 → 1.0.1
-- **来源**：本地开发仓库正式标签 `v1.0.1`，发布提交 `6a5509d34f226d4b0fbcddfe57ab2025c9f14a74`；标签树与后续记录发布哈希的 HEAD 树一致。同步依据为 53 个 Git 已跟踪文件。
-- **变更**：阅读列改为 40rem 居中，标题、正文与判断条共用阅读列；图、表与卡片保持通栏；修复 recap 模块内部布局受全局居中规则影响的问题。Skill frontmatter、Skill README、仓库 README、SKILLS 索引均同步标为 1.0.1。
-- **版本行为**：1.0.1 为 PATCH 布局修复；本次未重跑源记录中的 1280/1440 全路径验收，不将既有版本日志中的测试声明描述为本次新执行。
-- **范围与隐私**：只复制 `graphic-report` 仓库 53 个已跟踪文件，不导入原仓库提交历史/邮箱、备份目录或父级工作区资料；此前已确认公开的第六场案例保持不变。
-- **许可**：保留 Skill 未声明正式开源许可证的状态与现有第三方许可说明。
-- **验证**：53 个 tagged 源文件与快照逐 Git blob SHA-1 比对一致（0 差异）；敏感模式扫描无命中；仓库内相对链接无断链；索引版本各恰好一行。推送后的远端 Git tree 与 Raw 链接待核验。
+### 更新：skillfactory 套件
+- **来源**：用户提供 `skillfactory.zip`，SHA-256 `B5A9AAE23EC50851533ED8B07F695D02925E51AAC47CF0C18E524051B4308F2F`；ZIP 30 个文件，路径与原 suite 完全一致，无新增或删除路径。
+- **版本变化**：`skill-orchestrator` 1.8.2→1.9.0；`skill-creator` 1.1.1→1.2.0；套件内 `skill-effectiveness-evaluator` 0903V3→0903V4；其余成员版本字段不变，但文件与 ZIP 同步。ZIP 未声明 Suite 整体版本。
+- **管理变更**：替换 `suites/skillfactory/` 的 30 个文件；更新根 README、SKILLS 索引中的成员版本及 evaluator 版本注记；更新 skillfactory 许可证说明；保留 `skill-creator/LICENSE.txt` 原文。
+- **边界**：仅更新 Suite 内副本；独立目录 `skills/skill-effectiveness-evaluator/` 的 0903V2 未改动。
+- **安全检查**：检查文件清单、机器绝对路径、邮箱、token/私钥模式；未发现敏感命中。Apache-2.0 许可文件 SHA-256 与原快照一致。
+- **验证**：Suite 基线脚本确认两个核心门禁和三个专项 Skill 可读且含调度接口；6 个成员结构校验通过（两项仅提示无资源引用）；ZIP 30 个文件与暂存快照 SHA-256 一致；链接检查无断链。推送后的远端树待核验。
 
 ## 2026-11-11
 
@@ -31,6 +31,26 @@ Newest first. Each entry records what changed, why, and how it was verified.
 - **版本行为**：1.0.1 属 PATCH 修复。保留本地 CHANGELOG 中既有验证声明，不额外扩展声称此次重复了 1280/1440 所有路径测试。
 - **许可证与范围**：仅同步 `graphic-report` 子仓库已跟踪文件，不导入本地 Git 历史、备份目录或父级工作区材料；保持 Skill 本身未声明开源许可证和第三方许可证记录。
 - **验证**：待完成 tagged 文件逐 blob 校验、敏感信息/链接检查和远端树核验。
+
+## 2026-11-12
+
+### 更新：skillfactory 套件
+- **来源**：用户提供的 `skillfactory.zip`（SHA-256 `7D8E...`），包含 6 个成员、30 个文件；ZIP 内文件路径与现有 Suite 完全一致，无新增/删除路径。
+- **版本变化**：`skill-orchestrator` 1.8.2→1.9.0；`skill-creator` 1.1.1→1.2.0；套件内 `skill-effectiveness-evaluator` 0903V3→0903V4；其余成员保持自身版本声明。
+- **变更**：以 ZIP 内容更新 `suites/skillfactory/`；更新根 `README.md`、`SKILLS.md` 的套件版本及 evaluator 版本备注；保留 `skill-creator/LICENSE.txt` 原文件。
+- **边界**：仅更新 suite 副本；`skills/skill-effectiveness-evaluator/` 独立版 0903V2 不变，不与 Suite 副本合并。
+- **隐私与范围**：上传前检查包内文件路径、凭据/邮箱/绝对路径模式；未见敏感命中。无提交本地开发目录、工作区材料或 ZIP 外文件。
+- **验证**：待完成 ZIP 解包副本与 GitHub 快照逐文件 SHA-256 比对、结构/链接检查及远端树核验。
+
+## 2026-11-12
+
+### 更新：skillfactory 套件
+- **来源**：用户提供 `skillfactory.zip`，SHA-256 `B5A9AAE23EC50851533ED8B07F695D02925E51AAC47CF0C18E524051B4308F2F`；ZIP 30 个文件，路径与原 suite 完全一致，无新增或删除文件。
+- **版本变化**：`skill-orchestrator` 1.8.2→1.9.0；`skill-creator` 1.1.1→1.2.0；套件内 `skill-effectiveness-evaluator` 0903V3→0903V4；`writing-for-agents` 1.1.0、`skill-from-externals` 1.0.0、`skill-from-masters` 1.1.1 版本号不变，但包内文件与 ZIP 内容同步。ZIP 未声明 Suite 整体版本。
+- **管理变更**：替换 `suites/skillfactory/` 的 30 个文件；README/SKILLS 索引记录成员版本与无 suite-level version；更新 skillfactory 许可证说明；保留 `skill-creator/LICENSE.txt` 原文及 SHA-256。
+- **边界**：独立目录 `skills/skill-effectiveness-evaluator/` 的 0903V2 不改动；仅 Suite 内副本升至 0903V4。
+- **安全检查**：检查文件清单、权限相关字符串、绝对用户路径、个人邮箱、token/私钥模式；未发现敏感命中。许可证文件与原快照 SHA 一致。
+- **验证**：待完成 ZIP/临时快照对比、结构脚本验证、管理文档链接检查、远端逐文件核验。
 
 ## 2026-11-10
 

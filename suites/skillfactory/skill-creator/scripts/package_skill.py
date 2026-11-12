@@ -16,6 +16,20 @@ from pathlib import Path
 from quick_validate import validate_skill
 
 
+EXCLUDED_DIRS = {".git", "backups", "__pycache__"}
+EXCLUDED_FILES = {".DS_Store", "Thumbs.db", "desktop.ini"}
+EXCLUDED_SUFFIXES = {".pyc", ".pyo"}
+
+
+def should_package(file_path, skill_path):
+    relative_path = file_path.relative_to(skill_path)
+    return not (
+        any(part in EXCLUDED_DIRS for part in relative_path.parts)
+        or file_path.name in EXCLUDED_FILES
+        or file_path.suffix in EXCLUDED_SUFFIXES
+    )
+
+
 def package_skill(skill_path, output_dir=None):
     """
     Package a skill folder into a zip file.
@@ -57,10 +71,18 @@ def package_skill(skill_path, output_dir=None):
     skill_name = skill_path.name
     if output_dir:
         output_path = Path(output_dir).resolve()
-        output_path.mkdir(parents=True, exist_ok=True)
     else:
         output_path = Path.cwd()
 
+    try:
+        output_path.relative_to(skill_path)
+    except ValueError:
+        pass
+    else:
+        print("❌ Error: Output directory must be outside the skill folder.")
+        return None
+
+    output_path.mkdir(parents=True, exist_ok=True)
     zip_filename = output_path / f"{skill_name}.zip"
 
     # Create the zip file
@@ -68,7 +90,7 @@ def package_skill(skill_path, output_dir=None):
         with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
             # Walk through the skill directory
             for file_path in skill_path.rglob('*'):
-                if file_path.is_file():
+                if file_path.is_file() and should_package(file_path, skill_path):
                     # Calculate the relative path within the zip
                     arcname = file_path.relative_to(skill_path.parent)
                     zipf.write(file_path, arcname)

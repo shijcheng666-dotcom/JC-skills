@@ -37,6 +37,7 @@ python skills/skill-orchestrator/scripts/check_capability_baseline.py skills
 - **团队级 Skill**（要复用、要推广）：直接描述需求，例如"做一个部门通用的 XX Skill，几个团队都要用"，由 orchestrator 接管完整流程。
 - **个人轻量 Skill**：直接说"做个 XX Skill 我自己用"，由 `skill-creator` 完成创建与轻量验证，不经过 orchestrator。
 - 参与 Skill 不会主动响应业务任务，只接受 orchestrator 按环节调度；缺少某个参与 Skill 时，orchestrator 会按降级规则说明影响并继续。
+- 迭代按可独立验收与回滚的变更集推进。Git 仅作为可选的版本协同能力，不可用时降级为源目录外快照与指纹记录；是否提交、发布与推广始终由作者决定。
 
 ## 环境说明
 

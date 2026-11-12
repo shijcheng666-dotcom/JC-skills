@@ -23,7 +23,7 @@ A suite is a set of skills designed to work together. Install the whole suite, n
 
 | Suite | Contents | Purpose | Entry point |
 |---|---|---|---|
-| [skillfactory](suites/skillfactory/) | 6 skills | Create, evaluate, and evolve team-level skills through one orchestrated flow. | [README.md](suites/skillfactory/README.md) |
+| [skillfactory](suites/skillfactory/) | 6 skills | Create, evaluate, and evolve team-level skills through one orchestrated flow (orchestrator 1.9.0; evaluator 0903V4). Package has no suite-level version; member versions are tracked in [SKILLS.md](SKILLS.md). | [README.md](suites/skillfactory/README.md) |
 
 See [SKILLS.md](SKILLS.md) for the full index with direct and raw links, and [CHANGELOG.md](CHANGELOG.md) for version history.
 

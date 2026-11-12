@@ -21,16 +21,16 @@ Rigor Mode's `SKILL.md` frontmatter name is `rigor-mode-v2`. The directory keeps
 
 | Slug | Members | Directory | Guide |
 |---|---|---|---|
-| `skillfactory` | `skill-orchestrator` (entry), `skill-creator`, `skill-effectiveness-evaluator`, `writing-for-agents`, `skill-from-externals`, `skill-from-masters` | [Browse](suites/skillfactory/) | [README](suites/skillfactory/README.md) |
+| `skillfactory` (package version not declared) | `skill-orchestrator` 1.9.0 (entry), `skill-creator` 1.2.0, `skill-effectiveness-evaluator` 0903V4, `writing-for-agents` 1.1.0, `skill-from-externals` 1.0.0, `skill-from-masters` 1.1.1 | [Browse](suites/skillfactory/) | [README](suites/skillfactory/README.md) |
 
 ### Version note: two copies of the evaluator
 
 | Location | Version | Role |
 |---|---|---|
 | `skills/skill-effectiveness-evaluator/` | 0903V2 | Standalone use |
-| `suites/skillfactory/skill-effectiveness-evaluator/` | 0903V3 | Pinned member of skillfactory, adds the orchestrator dispatch interface |
+| `suites/skillfactory/skill-effectiveness-evaluator/` | 0903V4 | Pinned member of skillfactory, adds the orchestrator dispatch interface |
 
-They are intentionally maintained independently. 0903V3 is a small adaptation for orchestrator calls inside the suite; 0903V2 remains the standalone version. This is deliberate, not a pending upgrade.
+They are intentionally maintained independently. The suite copy is 0903V4; the standalone copy remains 0903V2. This is deliberate, not a pending upgrade.
 
 ## Direct sharing links
 
