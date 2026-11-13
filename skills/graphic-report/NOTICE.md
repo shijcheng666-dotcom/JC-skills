@@ -6,7 +6,7 @@
 - 版本：v0.15.0（提交 9d5f880b，2026-11-04）
 - 用途：把页面源文件（`.src.html`）渲染为自包含 HTML，并提供浏览器视觉检查（`kit/render.mjs`、`kit/look.mjs`）。
 - 本包仅保留 `kit/`、`plan/`、`references/` 目录，**未修改任何源文件**。完整许可见 `engine/LICENSE`；上游 SKILL.md 存为 `engine/UPSTREAM-SKILL.md.txt` 以备参考。
-- `engine/node_modules/playwright-core`：Apache-2.0，用于控制本机浏览器做视觉检查。
+- `playwright-core`（Apache-2.0）用于控制本机浏览器做视觉检查与截图；主分发包和工作区内置于 `engine/node_modules`，精简上传包不携带，按需执行 `npm install --no-save --prefix engine playwright-core` 补齐。
 - 安全审查（2026-11-09）：渲染脚本无 `fetch`/HTTP 请求；仅 `render.mjs` 会向页面写入 Google Fonts 外链（本包通过 `zh-adapt.mjs` 移除）；`child_process` 仅用于打开文件与运行 `<ve-flow model>`（本包不使用该功能）。
 
 ## 图形语汇（assets/vocab.css、references/vocabulary.md）

@@ -1,4 +1,4 @@
-/* 中文基础层：保留引擎 register 差异，统一离线字体、浅色阅读与桌面画布。 */
+/* 中文基础层：统一离线字体与桌面画布；以下变量仅作渲染兜底，页面可按用户指示或内容场景覆盖。 */
 :root, :root[data-register] {
   color-scheme: light;
   --font-body: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", "Segoe UI", sans-serif;

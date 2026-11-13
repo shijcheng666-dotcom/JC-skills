@@ -8,8 +8,14 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { createRequire } from "node:module";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const require = createRequire(join(here, "..", "engine", "package.json"));
-const { chromium } = require("playwright-core");
+const engine = join(here, "..", "engine");
+const require = createRequire(join(engine, "package.json"));
+let chromium;
+try { ({ chromium } = require("playwright-core")); }
+catch {
+  console.error(`✗ 缺少 playwright-core，无法截图。安装：npm install --no-save --prefix "${engine}" playwright-core`);
+  process.exit(2);
+}
 
 const file = resolve(process.argv[2] ?? "");
 const outDir = resolve(process.argv[3] ?? join(dirname(file), "shots"));
