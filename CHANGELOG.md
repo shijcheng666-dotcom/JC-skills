@@ -10,7 +10,9 @@ Newest first. Each entry records what changed, why, and how it was verified.
 - **行为影响（1.1.0）**：视觉形式不再预设背景、配色、形状、材质、插画或动效偏好。用户明确给出风格、参考模板或品牌规范时遵循，嵌入模式服从宿主；未指定时按内容主题、读者与使用场景自主设计。基础主题降为渲染兜底，`templates/base.src.html` 移除固定 `data-register="paper"`，引擎 register 与风格参考改为可选实现资源；设计推导、候选比较与效果三问的停止条件同步改为“符合用户指示或内容主题、读者与使用场景”。
 - **随带变更（1.0.2、1.0.3）**：`NOTICE.md` 与 `SKILL.md` 依赖说明改为区分主分发包（内置 `engine/node_modules`）与精简上传包（按需 `npm install --no-save --prefix engine playwright-core`）；`scripts/shoot.mjs` 缺失依赖时由硬报错改为友好提示并退出码 2。本仓库快照按 `.gitignore` 继续排除 `engine/node_modules`，因此克隆后视觉检查仍需本地安装依赖。
 - **许可证与范围**：仅同步 `graphic-report` 子仓库标签已跟踪文件，不导入本地 Git 历史、备份目录或父级工作区材料；Skill 本身仍无正式开源许可证，第三方许可记录（visual-explainer MIT、PELE MIT、Lucide ISC、Playwright Core Apache-2.0）未变，`engine/LICENSE`、`engine/kit/vendor/PELE-LICENSE` 原文保留。
-- **验证**：本次变更文件与 `v1.1.0` 逐 Git blob 比对，8/8 一致（`SKILL.md` `56ae0a1`、`references/design.md` `59f3c0e`、`CHANGELOG.md` `922b03a`、`NOTICE.md` `d45ef54`、`assets/base-theme.css` `e77ba33`、`references/vocabulary.md` `b2ad3da`、`scripts/shoot.mjs` `c0529b3`、`templates/base.src.html` `4253e12`）；变更文件敏感模式扫描（本机绝对路径、个人邮箱、token/私钥前缀）无命中；文件总数保持 54 个（53 个 Skill 文件 + 手写 README）。本次未重新运行构建与视觉检查，也未逐张人工验收示例联系表。推送后的远端树核验结果见本次同步的最终核验记录。
+- **验证**：本次变更文件与 `v1.1.0` 逐 Git blob 比对，8/8 一致（`SKILL.md` `56ae0a1`、`references/design.md` `59f3c0e`、`CHANGELOG.md` `922b03a`、`NOTICE.md` `d45ef54`、`assets/base-theme.css` `e77ba33`、`references/vocabulary.md` `b2ad3da`、`scripts/shoot.mjs` `c0529b3`、`templates/base.src.html` `4253e12`）；变更文件敏感模式扫描（本机绝对路径、个人邮箱、token/私钥前缀）无命中；5 个脚本通过 `node --check`；`scripts/build.mjs` 构建 `vocab-showcase.src.html` 成功，并实测缺失 `playwright-core` 时给出友好提示并跳过视觉检查；构建改动的示例 HTML 已还原至标签版本。提交 `d0bdfdc` 使用 GitHub noreply 身份。
+- **推送后核验**：远端 `main` HEAD 为 `d0bdfdc`；重新克隆后总计 157 个 Git blob，`skills/graphic-report/` 54 个文件，其中 53 个标签文件与本地 `v1.1.0` 逐 blob 一致（0 差异）；`suites/skillfactory/` 30 个文件未受影响，独立 `skills/skill-effectiveness-evaluator/` 仍为 0903V2；`SKILL.md`、Skill README、根 README、SKILLS 索引版本均为 1.1.0；5 个关键 Raw URL 返回 HTTP 200。
+- **未验证项**：本次未重新运行桌面视觉检查与逐张联系表人工验收（快照按 `.gitignore` 不含 `engine/node_modules`，运行检查需先本地安装 `playwright-core`）；1.1.0 的视觉自由度变化对既有产出的实际观感影响未做回归对比。
 
 ## 2026-11-12
 
