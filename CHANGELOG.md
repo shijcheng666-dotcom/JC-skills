@@ -9,7 +9,9 @@ Newest first. Each entry records what changed, why, and how it was verified.
 - **版本变化**：`SKILL.md` frontmatter `version` 1.1.0→1.1.1；根 README 与 SKILLS 索引、Skill README 版本同步为 1.1.1。
 - **行为影响**：属 PATCH 修复。此前 `scripts/build.mjs` 在视觉检查子进程启动失败、非零退出、被信号终止或输出无法识别时，可能把未完成的检查当作通过输出“✓ 桌面端视觉检查通过”；1.1.1 改为分别报 `✗ 视觉检查进程异常（原因）` 或 `✗ 视觉检查未返回可识别结果`，并设置非零退出码。明确的 `Visual check skipped:` 仍按降级处理，不计为通过。依赖旧版“构建退出码 0 即视觉检查通过”的自动化流程，需注意失败的检查现在会正确报错。
 - **许可证与范围**：仅同步 `graphic-report` 子仓库标签已跟踪文件，不导入本地 Git 历史、备份目录或父级工作区材料；Skill 本身仍无正式开源许可证，第三方许可记录与许可原文未变。
-- **验证**：3 个变更文件与 `v1.1.1` 逐 Git blob 比对，3/3 一致（`SKILL.md` `6621988`、`CHANGELOG.md` `0af68f4`、`scripts/build.mjs` `e6fead6`）；`scripts/build.mjs` 通过 `node --check`；变更文件敏感模式扫描（本机绝对路径、个人邮箱、token/私钥前缀）无命中；同步前确认远端 53 个 Skill 文件与 `v1.1.0` 逐 blob 一致，本次文件总数保持 54 个（53 个 Skill 文件 + 手写 README）。本次未安装 `playwright-core`，故未实机验证异常分支的报错文案与退出码，也未重跑桌面视觉检查。
+- **验证**：3 个变更文件与 `v1.1.1` 逐 Git blob 比对，3/3 一致（`SKILL.md` `6621988`、`CHANGELOG.md` `0af68f4`、`scripts/build.mjs` `e6fead6`）；`scripts/build.mjs` 通过 `node --check`；变更文件敏感模式扫描（本机绝对路径、个人邮箱、token/私钥前缀）无命中；同步前确认远端 53 个 Skill 文件与 `v1.1.0` 逐 blob 一致，本次文件总数保持 54 个（53 个 Skill 文件 + 手写 README）。已用注入崩溃的 `scripts/desktop-look.mjs` 实测对比：1.1.0 在检查子进程崩溃时仍输出“✓ 桌面端视觉检查通过”且退出码 0，1.1.1 输出“✗ 视觉检查进程异常（退出码 1）”且退出码 1；另实测缺 `playwright-core` 时 skipped 分支仍正常降级、退出码 0。未重跑完整桌面视觉检查。
+- **推送后核验**：远端 `main` HEAD 为 `5075886`；重新克隆后总计 157 个 Git blob，`skills/graphic-report/` 54 个文件，其中 53 个标签文件与本地 `v1.1.1` 逐 blob 一致（0 差异）；`suites/skillfactory/` 30 个文件、独立 evaluator `0903V2`、套件 evaluator `0903V4` 均未受影响；四处版本索引均为 1.1.1；5 个关键 Raw URL 返回 HTTP 200。
+
 ## 2026-11-13
 
 ### 升级：graphic-report 1.0.1 → 1.1.0
