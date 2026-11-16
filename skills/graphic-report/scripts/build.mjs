@@ -49,7 +49,15 @@ if (!args.includes("--no-check")) {
       console.log("✗ 视觉检查发现问题；页面已写出，请按提示修正后重新运行。");
       process.exitCode = 1;
     }
-    else if (!lines.some((l) => /Visual check/.test(l))) console.log("  ✓ 桌面端视觉检查通过");
+    else if (r.error || r.signal || r.status !== 0) {
+      const reason = r.error?.message ?? (r.signal ? `信号 ${r.signal}` : `退出码 ${r.status}`);
+      console.error(`✗ 视觉检查进程异常（${reason}）；页面已写出，但未完成视觉检查。`);
+      process.exitCode = 1;
+    }
+    else if (!lines.some((l) => /✓ Visual check: no problems|Visual check skipped:/.test(l))) {
+      console.error("✗ 视觉检查未返回可识别结果；页面已写出，但未完成视觉检查。");
+      process.exitCode = 1;
+    }
   }
 }
 console.log("✓ 输出：" + out);
